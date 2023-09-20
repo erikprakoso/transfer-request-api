@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "51dceb85-9e66-482e-ac54-956bf83676bd",
+		"name": "Transfer Request Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4418335"
+	},
+	"item": [
+		{
+			"name": "Transfers",
+			"item": [
+				{
+					"name": "/transfers/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTA5OTU4NjJlZGU3OTI1MGQzMDM2MzIiLCJyb2xlIjoibWFrZXIiLCJpYXQiOjE2OTUxMzI3Mjl9.Wpc1oueOdBhokczu_l2bkIzO0snDHafGdSkNn9KDBII",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": {\n    \"username\": \"usermaker1\",\n    \"role\": \"maker\"\n  },\n  \"transferRequest\": {\n    \"senderAccount\": \"sender satu\",\n    \"recipientAccount\": \"recipient satu\",\n    \"amount\": 100,\n    \"status\": \"pending\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transfers/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transfers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transfers/list/:role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTA5OTU4NjJlZGU3OTI1MGQzMDM2MzIiLCJyb2xlIjoibWFrZXIiLCJpYXQiOjE2OTUxMzI3Mjl9.Wpc1oueOdBhokczu_l2bkIzO0snDHafGdSkNn9KDBII",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/transfers/list/approver",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transfers",
+								"list",
+								"approver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transfers/approve/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTA5OTU4NjJlZGU3OTI1MGQzMDM2MzIiLCJyb2xlIjoibWFrZXIiLCJpYXQiOjE2OTUxMzI3Mjl9.Wpc1oueOdBhokczu_l2bkIzO0snDHafGdSkNn9KDBII",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"65099bd15a1b5803ebd7a138\",\n  \"status\": \"approved\",\n  \"user\": {\n    \"username\": \"approver1\",\n    \"role\": \"approver\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transfers/approve/65099bd15a1b5803ebd7a138",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transfers",
+								"approve",
+								"65099bd15a1b5803ebd7a138"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "/users/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usermaker1\",\n    \"password\": \"usermaker1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usermaker1\",\n    \"password\": \"usermaker1\",\n    \"role\": \"maker\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

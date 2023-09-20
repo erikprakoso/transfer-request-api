@@ -1,0 +1,17 @@
+Extract `transfer-request-api`
+
+Pastikan sudah install `NodeJS(LTS)` versi terbaru
+
+Jika ingin menggunakan mongodb sendiri silahkan ubah di file `.env`
+
+Cara running:
+1. Masuk ke folder `transfer-request-api`
+2. Jalankan `npm install`
+3. Jalankan `node app.js`
+
+Swagger:
+1. Buka browser dan akses `http://localhost:3000/api-docs/`
+
+Pengujian:
+1. Import file `Transfer Request Management API.postman_collection.json` ke Postman
+2. Ikuti caranya sesuai video yang sudah pernah dikirim di WhatsApp
